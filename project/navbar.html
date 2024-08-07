@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluefly.com</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://kit.fontawesome.com/acaf989690.js" crossorigin="anonymous">
+
+    </script>
+    <style>
+        body{
+
+            margin: auto;
+        }
+        #top-header {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #header-logo-img {
+            cursor: pointer;
+            margin-left: 164px;
+        }
+
+        #right-top-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            margin-right: 14px;
+            align-items: center;
+
+        }
+
+        #search-bar {
+            cursor: pointer;
+        }
+
+        #searchInput {
+            display: none;
+
+        }
+
+        #search-text {
+            font-size: x-large;
+
+        }
+
+
+        #cart-display-div {
+            height: 604px;
+            width: 20%;
+            position: absolute;
+            flex-wrap: wrap;
+
+            background-color: white;
+            /* //overflow */
+            margin-left: -244px;
+            overflow: scroll;
+            text-align: center;
+
+        }
+
+        #cart-display-div::-webkit-scrollbar {
+            display: none;
+        }
+
+        .navbar-list {
+
+            display: flex;
+            justify-content: space-between;
+            letter-spacing: 0.2em;
+
+        }
+
+        .navbar-list>li>a {
+            text-decoration: none;
+            color: #000;
+
+        }
+
+        .red-box {
+            text-decoration: none;
+
+            letter-spacing: 0.2em;
+            display: flex;
+            justify-content: center;
+            color: red;
+
+        }
+
+        .top-pg-black-box {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 0.2px 0px 0.2px 2px;
+        }
+
+        /* index.html */
+        #shoesMainDiv {
+            height: 123px;
+            border: 1px solid blue;
+            display: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="top-header">
+            <div id="left-top-header">
+
+            </div>
+            <div id="header-logo">
+                <a href="index.html"> <img id="header-logo-img"
+                        src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243"
+                        alt=""></a>
+            </div>
+            <div id="right-top-header">
+                <div id="search-bar">
+                    <!-- onclick="searchfun()" -->
+                    <!-- <i class="fa-solid fa-magnifying-glass-arrow-right"></i> -->
+                    <img src="https://www.creativefabrica.com/wp-content/uploads/2020/02/08/Search-Icon-Graphics-1-1-580x387.jpg"
+                        height="40px" alt="">
+                    <span id="search-text">Search</span>
+                </div>
+                <input type="text" name="" id="searchInput" placeholder="Search our store">
+
+                <div id="header-user-icon">
+                    <!-- <a href="login.html"> <i class="fa-thin fa-user"> </i> </a> -->
+                    <a href="login.html"> <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1lJysbI0bqFlMIoCNeMdBP16eWU9nw4VNbw&usqp=CAU"
+                            height="24px" alt=""></a>
+
+                </div>
+                <div id="header-cart-logo">
+                    <!-- <i class="fa-thin fa-bag-shopping"></i> -->
+                    <a href="#"> <img
+                            src="https://image.shutterstock.com/image-vector/shopping-bag-icon-260nw-1074845483.jpg"
+                            height="40px" alt=""></a>
+                    <div id="cart-display-div">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- navigation bar for options -->
+        <div id="navbar-option">
+            <ul class="navbar-list" type="none">
+                <li>
+                    <a href="#" onmouseover="funshoes()">SHOES</a>
+                </li>
+                <li>
+                    <a href="#">HANDBAGS & ACCESSORIES</a>
+                </li>
+                <li>
+                    <a href="#">DESIGNERS</a>
+                </li>
+                <li>
+                    <a href="#">WOMEN</a>
+                </li>
+                <li>
+                    <a href="#">MEN</a>
+                </li>
+                <li>
+                    <a href="#">SUNGLASSES</a>
+                </li>
+                <li>
+                    <a href="#">JEWELRY & WATCHES</a>
+                </li>
+                <li>
+                    <a href="#">UNDER $50</a>
+                </li>
+                <li>
+                    <a href="#">BEAUTY</a>
+                </li>
+
+            </ul>
+
+            <li type="none">
+                <a class="red-box" href="#">CLEARANCE</a>
+            </li>
+        </div>
+
+        <div id="shoesMainDiv">
+
+        </div>
+    </div>
+
+</html>
+
+
+
+<script>
+
+
+
+
+    document.getElementById("search-bar").addEventListener("click", function () {
+        let searchbar = document.getElementById("search-bar")
+        searchbar.style.display = "none"
+        let inputSearchBar = document.getElementById("searchInput")
+        inputSearchBar.style.display = "block"
+        inputSearchBar.style.filter = "brightness(14px)"
+        inputSearchBar.style.border = "1 px solid black"
+        inputSearchBar.style.width = "100%"
+        inputSearchBar.style.height = "60%"
+
+        inputSearchBar.addEventListener("keypress", function (event) {
+            if (event.key == "Enter") {
+                window.location.href = "search.html"
+
+            }
+        })
+
+        let list = document.getElementById("navbar-option")
+
+        list.style.filter = "opacity(50%)"
+        console.log("vk")
+    })
+
+
+
+    //shoes function
+    // funshoes=()=>{
+
+    //     let shoesMainDiv=document.getElementById("shoesMainDiv")
+    //     shoesMainDiv.style.display="block"
+    //    let textshoes=document.getElementById("shoes")
+    //    textshoes.innerText="SHOES"
+
+    //  }
+
+    // add to cart funtionality
+    document.getElementById("header-cart-logo").addEventListener("click", function () {
+
+
+
+        let view = document.getElementById("cart-display-div")
+        view.innerHTML = null
+
+        if (view.style.display === "none") {
+            view.style.display = "block";
+
+        }
+        else {
+            view.style.display = "none";
+
+        }
+
+
+
+        let displayData = JSON.parse(localStorage.getItem("addToCartData")) || [];
+        console.log(displayData)
+
+        totalprice(displayData)
+        function totalprice(displayData) {
+            //  parseInt(el.price)
+            tt = displayData.reduce(function (acc, el) {
+
+                return acc + el.price;
+            }, 0)
+            console.log("total", tt)
+        }
+
+
+
+        displayData.forEach((el) => {
+            console.log(el)
+            let box1 = document.createElement("div")
+            let image = document.createElement("img")
+            image.src = el.image
+            image.style.height = "104px"
+
+            let name = document.createElement("h5")
+            name.innerText = el.snizeattribute
+
+            let desc = document.createElement("p")
+            desc.innerText = el.title
+
+            let price = document.createElement("h4")
+            price.innerText = "$" + el.price
+
+
+            box1.append(image, name, desc, price);
+
+
+            view.append(box1)
+
+        })
+        let btn = document.createElement("button")
+        btn.innerText = "CHECK OUT"
+        btn.addEventListener("click", function () {
+            window.location.href = "checkout.html"
+        })
+
+        btn.setAttribute("id", "checkout-btn")
+        let total = document.createElement("p")
+        total.innerText = "Total  115.00"
+
+        view.append(btn, total)
+
+    })
+</script>
